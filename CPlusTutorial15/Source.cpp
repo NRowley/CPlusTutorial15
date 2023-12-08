@@ -4,10 +4,7 @@
 #include "Pawn.h"
 using namespace std;
 
-int main()
-{
-	//POLYMORPHISM//////////////////////////
-
+void inheritanceFunction() {
 	Object* ptr_to_object = new Object;
 	Actor* ptr_to_actor = new Actor;
 	Pawn* ptr_to_pawn = new Pawn;
@@ -16,7 +13,7 @@ int main()
 
 	for (int i = 0; i < 3; i++) {
 		//ObjectArray[i]->BeginPlay();
-		
+
 		Object* obj = ObjectArray[i];
 
 		Actor* act = dynamic_cast<Actor*>(obj);
@@ -35,5 +32,12 @@ int main()
 	delete ptr_to_actor;
 	delete ptr_to_pawn;
 	delete ptr_to_object;
+}
+
+int main()
+{
+	inheritanceFunction();
+
+	
 	system("pause");
 }
