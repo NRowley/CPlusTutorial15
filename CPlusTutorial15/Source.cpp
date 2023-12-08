@@ -1,45 +1,8 @@
 #include <iostream>
+#include "Object.h"
+#include "Actor.h"
+#include "Pawn.h"
 using namespace std;
-
-
-class Object {
-public:
-	virtual void BeginPlay() {
-		cout << "Object BeginPlay() called. \n";
-	}
-
-	void ObjectFunction() {
-		cout << "ObjectFunction() called.\n";
-	}
-};
-
-class Actor : public Object {
-public:
-	virtual void BeginPlay() override {
-		cout << "Actor BeginPlay() called \n";
-	}
-
-	void ActorFunction() {
-		cout << "ActorFunction() called.\n";
-	}
-};
-
-class Pawn : public Actor {
-public:
-	virtual void BeginPlay() override {
-		cout << "Pawn BeginPlay() called \n";
-	}
-
-	void PawnFunction() {
-		cout << "PawnFunction() called.\n";
-	}
-};
-
-//CASTING
-
-
-
-
 
 int main()
 {
@@ -68,12 +31,6 @@ int main()
 			pwn->PawnFunction();
 		}
 	}
-
-
-	//CASTING///////////////////////////////////////////
-
-
-
 
 	delete ptr_to_actor;
 	delete ptr_to_pawn;
